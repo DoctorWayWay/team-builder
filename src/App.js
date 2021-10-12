@@ -18,10 +18,29 @@ function App() {
   // State Management
   const [formData, setFormData] = useState(initialFormData);
   const [teamMembers, setTeamMembers] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+  // Update Form Function
+  const updateForm = (inputName, inputValue) => {
+    setFormData({ ...formData, [inputName]: inputValue });
+  };
+  // Submit Form Function
+  const submitForm = () => {
+    const newMember = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      role: formData.role,
+    };
+    // Conditional Warning Message
+    if (!newMember.name || !newMember.email || !newMember.role) {
+      setErrorMessage("Please fill out the entire form.");
+      return;
+    }
+  };
 
   // Returing App
   return (
     <div className="App">
+      <h1>Member Form</h1>
       <MemberForm />
     </div>
   );
