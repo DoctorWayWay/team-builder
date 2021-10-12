@@ -1,5 +1,9 @@
+// Importing Libraries and StyleSheet
 import React, { useState, useEffect } from "react";
 import "./App.css";
+
+// Importing Components
+import MemberForm from "./components/MemberForm";
 
 // Initial Form Data Key/Value pairs
 const initialFormData = {
@@ -18,7 +22,7 @@ function App() {
   // Returing App
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <MemberForm />
     </div>
   );
 }
