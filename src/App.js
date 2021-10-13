@@ -38,8 +38,9 @@ function App() {
       setErrorMessage("Please fill out the entire form.");
       return;
     }
-    // Add member to list
+    // Add member to list and clear form slots
     setMembers([...members, newMember]);
+    setFormData(initialFormData);
   };
 
   // Returing App
